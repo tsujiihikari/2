@@ -1,0 +1,66 @@
+KruglePlusというサイトの構成を大きく変えたい
+
+以下の要望のように変更して
+
+
+現在
+
+
+apache   KruglePlus/index.html css/main.css js/main.jsなどのクライアント資材を配置
+tomcat   krugleapi.warをデプロイ
+
+分かれている
+
+
+期待する構成
+　　KruglePlus.war
+　　
+　　   このなかにindex.html css/main.css js/main.jsなどのクライアント資材を一式含める
+　　   かつServletのjavaと.classやＷＥＦ－ＩＮＦの下にあるものはすべて含める
+　　   
+　　   そして、tomcatにKruglePlus.warをデプロイ
+　　   
+　　   apacheとtomcat連携により、http://xxxxxx/KruglePlus/でサイトにアクセスすると、
+　　   index.htmlが開く
+　　   
+　　   いまはkrugleapi.warをデプロイして、apache側にindex.htmlをKruglePlus/ディレクトリに
+　　   配置と分けていた
+　　   今後はひとつのwarに含めて、それをapache連携（tomcat)
+　　  で対応する
+　　  
+　　   かつ、いまJavaScriptのmain.jsのなかからkrugleapi向けてにアクセスするように記載がある
+　　   そういった箇所もドキュメントルートが同じなので、そこも修正対象
+　　   もしかしたらＳｅｒｖｌｅｔ側も一部修正になるかもしれない
+　　   
+　　   
+　　   全体を見直して修正して
+　　   
+　　   
+　　   期待結果
+　　       http://10.205.7.19/KruglePlus/
+　　       
+　　       
+　　       KruglePlus.war
+　　           この中にindex.htmlなどのクライアント資材とＳｅｒｖｌｅｔのWEB-INFやＭｏｃｋに関するもの
+　　           ＣＳＶやいろいろすべて包含して
+　　       
+
+
+※重要
+添付
+　　　　　今のkrugleapi.warを添付する
+　　　　　
+　　　　　今のKruglePlus.zipを添付する
+　　　　　
+　　　　　
+　　　　　最終的にはいまwarやzipに入っているコードやライブラリやimagesやfontもぜーーんぶもれることなく
+　　　　　KruglePlus.warにひとまとまりにして返却して
+
+
+
+
+
+
+
+
+
