@@ -1,0 +1,104 @@
+サイト修正およびServletを修正して
+
+以下の要望を修正し、添付のdbplus.warを修正した形で、再度dbplus.warのダウンロードリンクを提示して
+
+修正する際は、以下方針として
+１）いきなりコードを修正すると、ChatGPTのコードは間違いやすいので、修正方針と影響調査（どこをどうなおすかの検討）として
+２）その修正方針と影響調査をもとに、コード修正案を出す
+３）そのコード修正案を充てた際、ただしく動くか、期待する修正になるかをチェック
+４）１～３が問題なければ、コードを修正する
+５）コード修正後に、再度要望と修正内容が合致しており、ただしい修正になっているかをインスペクション
+６）問題があれば、コードを元に戻し、１～５を再帰的にやりなおして、正しいコードに導く
+
+
+修正点
+
+[1]
+
+Krugle+の左上のアイコンの位置が違う
+
+以前のコードを添付するので、それを参考に位置を戻して
+
+また、letter-spacing:0.12emは入れて
+
+いまKrugle+の文字間隔が狭い
+
+
+[2]
+
+ヘッダーのコードのタブは、8個表示する
+
+またヘッダー15文字 + ...  の文字は、
+letter-spacing:0.1emを入れて
+またfont-sizeもいまより+1px
+
+
+タブの横幅ももう少し広がると思う
+
+
+
+
+
+[3]
+
+<div class="codePanelChoices">
+            <button id="codeSourceModeTab" class="codeModeTab codeSourceModeTab isActive" type="button" data-code-panel="source">ソースコード</button>
+            <button class="codeModeTab codeTableInfoTab" type="button" data-code-panel="table" hidden="" aria-hidden="true">テーブル選択</button>
+          </div>
+          
+
+
+<div class="codeModeTabs" aria-label="コード表示切替">
+          <div class="codePanelChoices">
+            <button id="codeSourceModeTab" class="codeModeTab codeSourceModeTab isActive" type="button" data-code-panel="source">ソースコード</button>
+            <button class="codeModeTab codeTableInfoTab" type="button" data-code-panel="table" hidden="" aria-hidden="true">テーブル選択</button>
+          </div>
+          <div class="sourceActions" role="group" aria-label="保存とコピー">
+            <button type="button" class="sourceAction htmlSave" id="saveSourceHtml">HTMLへ保存</button>
+            <button type="button" class="sourceAction" id="saveSourceImage">画像で保存</button>
+            <button type="button" class="sourceAction" id="toolbarDownload">Download</button>
+            <button type="button" class="sourceAction" id="toolbarCopy">Copy</button>
+          </div>
+        </div>
+        
+        
+       
+       
+       ここにたて列でＳＣＲＯＬＬ－Ｙのスクロールバー出ている
+       これはいらない
+       スクロールバー削除して 
+
+
+[4]
+
+NIKKO.nkCCIS/efront.online.jar/lib/ApFrKjEdd_dbac.jar/jp/co/fnt/stp1/app/apptier/front/kj/edd/model/accessor/KyakKihnJohoSyutkQueryRecordValue.java
+
+ここの文字サイズを文字の長さで切り替えて
+
+できれば全部表示してほしい
+
+今の長さだと13pxにしないとだめ
+
+これより短い場合は14pxでもよい
+
+15pxは大きすぎる
+
+
+[5]
+
+ＨＴＭＬへ保存
+
+　　→　パスのコピーや、DownloadやCopyボタンや画像への保存ボタンはいる
+　　
+
+
+またいま全画面で広がっているので、もう少しコードが中心にきて、
+ヘッダーとか余白とか若干付帯するものをつけて
+
+もとのＫｒｕｇｌｅＰｌｕｓが参考になると思う
+
+画像に保存の内容もまたいま全画面で広がっているので、もう少しコードが中心にきて、
+ヘッダーとか余白とか若干付帯するものをつけて
+
+はおなじ
+
